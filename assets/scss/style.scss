@@ -1,0 +1,122 @@
+@use 'fonts'; //шрифты
+@use 'reset'; //каскадное обнуление
+@use 'varibles' as *; //
+@use 'mixins'; // миксины
+
+
+html, body {
+   font-family: 'Roboto', sans-serif; //симейство шрифта по умолчанию
+   @include mixins.adaptive-font($f-size_15);
+   font-weight: $weight_regular;
+}
+
+.container {
+   max-width: 1170px + 30; // размер контейнера
+   margin-inline: auto;
+   padding-inline: 15px;
+}
+.wrapper {
+   min-height: 100%;
+   overflow: hidden;
+   display: flex;
+   flex-direction: column;
+}
+.main {
+   flex: 1 1 auto;
+}
+
+.discount {
+   @include mixins.position(fixed, 0, 0);
+   width: 100%;
+   background-color: $f-color_gray_CED3CA;
+   @include mixins.flex(center, center);
+   flex-wrap: wrap;
+   padding:8.5px 0;
+   color: $f-color_gray_F7F7F7;
+   z-index: 5;
+   &__text {
+      @include mixins.adaptive-font($f-size_14);
+      line-height: 15px;
+      color: $f-color_black;
+      margin-right: 20px;
+      @include mixins.adaptive(sm) {
+         margin: 0 0 10px 0;
+         flex: 1 1 100%;
+         text-align: center;
+      } 
+   }
+   &__btn {
+      width: 25px;
+      height: 25px;
+      color: $f-color_black;
+      font-size: 26px;
+      color: $f-color_black;
+      background-color: $f-color_transparent;
+      @include mixins.position(absolute, 96%, 19%,);
+       @include mixins.adaptive(sm) {
+          left: 90%;
+          top: 49%;
+      } 
+      
+      
+   }
+   display: none;
+   &__link {
+      width: 113px;
+      background-color: $f-color_black_1A1A1A; 
+      font-size: 12px;
+      line-height: 28px;
+      text-align: center;
+
+   }
+}
+.header {
+   width: 100%;
+   height: 160px;
+   padding-top: 45px;
+   background-color: $f-color_white;
+   &__body {
+      @include mixins.flex(center, space-between);
+   }
+   &__menu {
+      flex-basis: (527px / $container-size) * 100%;
+      padding: 15px;
+
+   }
+
+   &__list {
+      @include mixins.flex(center, center);
+      margin-inline: -11px;
+
+   }
+
+   &__item {
+      padding-inline: 11px;
+   }
+
+   &__link {
+   }
+
+   &__feautures {
+   }
+
+   &__button-menu {
+   }
+}
+.container {
+}
+.feautures {
+
+   &__link {
+   }
+
+   &__icon {
+   }
+}
+.bx {
+}
+.bx-menu {
+}
+
+
+
