@@ -4,7 +4,8 @@
 $screens: (
    "lg": 992px,
    "md": 768px,
-   "sm": 576px
+   "sm": 576px,
+   "mobile": 353px
 );
 @mixin adaptive($screen: null){
    @if $screen != null{
@@ -16,7 +17,7 @@ $screens: (
          }
       }
    }@else{
-      @media screen and (max-width: 360px){
+      @media screen and (max-width: 400px){
          @content;
       }
    }
@@ -24,12 +25,12 @@ $screens: (
 // АДАПТИВ ******************************
 
 // ПОЗИЦИОНИРОВАНИН *********************
-@mixin position($position, $left, $top, $right: null, $bottom: null){
+@mixin position($position,$top, $left, $bottom: null, $right: null){
    position: $position;
-   left: $left;
    top: $top;
-   right: $right;
+   left: $left;
    bottom: $bottom;
+   right: $right;
 }
 // ПОЗИЦИОНИРОВАНИН **********************
 
