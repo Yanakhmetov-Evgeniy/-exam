@@ -6,7 +6,7 @@
 
 html, body {
    font-family: 'Roboto', sans-serif; //симейство шрифта по умолчанию
-   @include mixins.adaptive-font($f-size_15);
+   font-size: 15px;
    font-weight: $weight_regular;
 }
 .container {
@@ -27,24 +27,26 @@ html, body {
    display: none;
 }
 .discount {
-   
-   &_none {
-      top:-100%;
-   }
-
    background-color: $f-color_gray_CED3CA;
    @include mixins.position(fixed, 0, 0);
    z-index: 5;
    width: 100%;
    transition: .4s;
 
+   // .discount
+   &_none {
+      top:-100%;
+   }
+
+   // .discount__container
    &__container{ 
    @include mixins.flex(center, center);
    flex-wrap: wrap;
    }
-   
+
+    // .discount__text
    &__text {
-      @include mixins.adaptive-font($f-size_14);
+      font-size: 14px;;
       line-height: 15px;
       color: $f-color_black;
       margin-right: 20px;
@@ -54,6 +56,8 @@ html, body {
          line-height: 20px;
       } 
    }
+
+    // .discount__link
    &__link {
       width: 113px;
       font-size: 12px;
@@ -63,10 +67,10 @@ html, body {
       text-align: center;
    }
  
+    // .discount__btn
    &__btn {
       color: $f-color_black;
       font-size: 25px;
-         color: $f-color_gray_F7F7F7;
       background-color: $f-color_transparent;
       margin-left: 30px;
       padding: 10px;
@@ -83,24 +87,12 @@ html, body {
    width: 100%;
    height: 115px;
    margin-top: 45px;
+   background-color: $f-color_white;
+   color: $f-color_black_292929;
     @include mixins.adaptive(mobile) {
        margin-top: 65px;
    } 
-   background-color: $f-color_white;
-   color: $f-color_black_292929;
-   &__container {
-      height: 100%;
-   }
-   &__body {
-      @include mixins.flex(center, space-between);
-      height: 100%;
-   }
-   &_padding_none {
-      margin-top: 0;
-      @include mixins.adaptive(mobile) {
-         margin-top: 0;
-     } 
-   }
+
    .menu_padding_none {
       top: 75px;
        @include mixins.adaptive(md) {
@@ -110,14 +102,37 @@ html, body {
          top: 255px;
       }
    }
+
+   // header__padding_none
+   &_padding_none {
+      margin-top: 0;
+      @include mixins.adaptive(mobile) {
+      margin-top: 0;
+      } 
+   }
+
+   // header__container
+   &__container {
+      height: 100%;
+   }
+
+   // header__body
+   &__body {
+      @include mixins.flex(center, space-between);
+      height: 100%;
+   }
+
+   // header__logo
    &__logo {
       flex-basis: (256px / $container-size) * 100%;
       min-width: 100px;
       height: 41px;
    }
+
+   // header__menu
    &__menu {
       flex-basis: (294px / $container-size) * 100%;
-       @include mixins.adaptive(lg) {
+      @include mixins.adaptive(lg) {
          position: fixed;
          top: 120px;
          right:-100%;
@@ -129,29 +144,35 @@ html, body {
          transition: .4s;
          background-color: $f-color_gray_CED3CA;  
       } 
-       @include mixins.adaptive(md) {
+      @include mixins.adaptive(md) {
          top: 300px;
       } 
       @include mixins.adaptive(mobile) {
          top: 320px;
       }
-      
    }
+
    .active {
       right: 0;
    }
+
+   // header__list
    &__list {
       @include mixins.flex(center, space-between);
       @include mixins.adaptive(lg) {
          @include mixins.flex(center, flex-start, column);
       }
    }
+
+   // header__item
    &__item {
       @include mixins.adaptive(lg) {
          display: block;
          text-align: center;
-         }
+      }
    }
+
+   // header__link
    &__link {
       font-size: 16px;;
       line-height: 20px;
@@ -164,9 +185,11 @@ html, body {
          
       }
    }
+
+   // header__button-menu
    &__button-menu {
       position: relative;
-      z-index: 20px;
+      z-index: 20;
       display: none;
       font-size: 20px;
       padding-top: 4px;
@@ -177,20 +200,18 @@ html, body {
        @include mixins.adaptive(lg) {
          display: inline-block;
       } 
-       @include mixins.adaptive(md) {
-        
-      } 
    }
 
-   
+   // header__burger-menu
    &__burger-menu {
       display: none;
        @include mixins.adaptive(lg) {
          width: 75px;
          @include mixins.flex(center, space-between);
       } 
-
    }
+
+   // header__burger-linea
    &__burger-linea {
       display: none;
       width: 1px;
@@ -200,22 +221,22 @@ html, body {
           display: block;
       } 
    }
+
+   // header__burger-icon
    &__burger-icon {
       display: none;
        @include mixins.adaptive(md) {
           display: inline-block;
-          
-
       } 
    }
 }
 .feautures {
    @include mixins.flex(center, space-between);
    margin-inline: -15px;
-    @include mixins.adaptive(lg) {
+   @include mixins.adaptive(lg) {
        margin-inline: -10px;
    } 
-    @include mixins.adaptive(md) {
+   @include mixins.adaptive(md) {
       position: fixed;
       top: 130px;
       right:-100%;
@@ -230,6 +251,8 @@ html, body {
    @include mixins.adaptive(mobile) {
       top: 150px;
    }
+
+   // feautures__link
    &__link {
       color: $f-color_black_292929;
       line-height: 20px;
@@ -242,7 +265,7 @@ html, body {
       }
       &:nth-child(1) {
          padding-left: 0;
-          @include mixins.adaptive(md) {
+         @include mixins.adaptive(md) {
             padding-left: 70px;
          } 
       }
@@ -268,12 +291,16 @@ html, body {
          }
       } 
    }
+
+   // feautures__paddong_none
    &_paddong_none {
       top: 85px;
       @include mixins.adaptive(mobile) {
          top: 85;
       }
    }
+
+   // feautures__icon
    &__icon {
       transform: translate(0, 3px);
       color: #000;
@@ -287,15 +314,18 @@ html, body {
    width: 100%;
    height: 600px;
    padding-bottom: 15px;
+
+   // .baner__container
    &__container {
       height: 100%;
    }
+
    // .baner__body
    &__body {
       @include mixins.flex(flex-end, flex-start);
       height: 100%;
-       @include mixins.adaptive(md) {
-          @include mixins.flex(center, center);
+      @include mixins.adaptive(md) {
+         @include mixins.flex(center, center);
       } 
    }
 
@@ -420,7 +450,6 @@ html, body {
       @include mixins.flex(flex-start, center);
       flex-wrap: wrap;
       margin-inline: -10px;
-      
    }
 
    // .catalog__item
@@ -429,7 +458,6 @@ html, body {
       max-width: 300px;
       padding-inline: 10px;
       transition: 0.4s;
-   
       @media screen and (max-width: 1109px) {
          &:nth-child(n+16) {
             position: absolute;
@@ -449,6 +477,8 @@ html, body {
          }
       }
    }
+
+   // .catalog__max-width
    &__max-width {
       .catalog__item {
          @media screen and (max-width: 1109px) {
@@ -509,6 +539,7 @@ html, body {
       padding-bottom: (341 / 275) * 100%;
       overflow: hidden;
    
+      // .card__img img
       img {
          display: block;
          position: absolute;
@@ -536,8 +567,10 @@ html, body {
    &__name {
       font-size: 15px;
       line-height: 18px;
-      color: $f-color_black_1A1A1A;
       display: inline;
+      a {
+         color: $f-color_black_1A1A1A;
+      }
    }
 
    // .card__advantage
@@ -607,19 +640,17 @@ html, body {
       } 
    }
 
+   // .good-price__information_gather
    &__information_gather {
       align-items: flex-start;
-      @media screen and (max-width: 579px) {
-         & {
       @media screen and (max-width: 579px) {
          & {
             align-items: center;;
          }
       }
-         }
-      }
-
    }
+
+   // .good-price__subtittle
    &__subtittle {
       margin-bottom: 30px;
       @media screen and (max-width: 834px) {
@@ -627,10 +658,11 @@ html, body {
             margin-bottom: 10px;
          }
       }
-       @include mixins.adaptive(sm) {
-          text-align: center;
+      @include mixins.adaptive(sm) {
+         text-align: center;
       } 
    }
+
    // .good-price__title
    &__title {
       @include mixins.adaptive-font($f-size_38);
@@ -749,9 +781,11 @@ html, body {
    height: 600px;
    background: #fff url(../img/studio-img-1.png) 50% 50% / cover no-repeat;
 
+   // .studio__container
    &__container {
       height: 100%;
    }
+
    // .studio__body
    &__body {
       @include mixins.flex(center, center);
@@ -856,6 +890,7 @@ html, body {
 .footer {
    width: 100%;
    min-height: 360px;
+
    // .footer__container
    &__container {
       height: 100%;
@@ -883,7 +918,7 @@ html, body {
          flex-basis: auto;
       } 
    }
-
+   // .footer__items
    &__items {
       margin-bottom: 15px;
       &:last-child {
@@ -908,7 +943,7 @@ html, body {
       height: 183px;
       padding-bottom: 20px;
       @include mixins.adaptive(md) {
-         flex: 1 1 100%;
+         flex-basis: 100%;
      } 
    }
 
@@ -924,6 +959,7 @@ html, body {
       } 
    }
    
+   // .footer__social
    &__social {
       @include mixins.adaptive(md) {
          order: 1;
@@ -938,6 +974,7 @@ html, body {
       margin-bottom: 15px;
    }
 
+   // .footer__img
    &__img {
       width: 55px;
       height: 87px;

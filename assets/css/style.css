@@ -69,17 +69,8 @@ html, body {
 
 html, body {
   font-family: "Roboto", sans-serif;
+  font-size: 15px;
   font-weight: 400;
-}
-@media (max-width: 767px) {
-  html, body {
-    font-size: calc(16px + -1.7px * ((100vw - 320px) / 1440));
-  }
-}
-@media (min-width: 767px) {
-  html, body {
-    font-size: calc(16px + -1px * (100vw / 1440));
-  }
 }
 
 .container {
@@ -122,19 +113,10 @@ html, body {
   flex-wrap: wrap;
 }
 .discount__text {
+  font-size: 14px;
   line-height: 15px;
   color: black;
   margin-right: 20px;
-}
-@media (max-width: 767px) {
-  .discount__text {
-    font-size: calc(16px + -3.4px * ((100vw - 320px) / 1440));
-  }
-}
-@media (min-width: 767px) {
-  .discount__text {
-    font-size: calc(16px + -2px * (100vw / 1440));
-  }
 }
 @media screen and (max-width: 576px) {
   .discount__text {
@@ -154,7 +136,6 @@ html, body {
 .discount__btn {
   color: black;
   font-size: 25px;
-  color: #f7f7f7;
   background-color: transparent;
   margin-left: 30px;
   padding: 10px;
@@ -180,23 +161,6 @@ html, body {
     margin-top: 65px;
   }
 }
-.header__container {
-  height: 100%;
-}
-.header__body {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  height: 100%;
-}
-.header_padding_none {
-  margin-top: 0;
-}
-@media screen and (max-width: 353px) {
-  .header_padding_none {
-    margin-top: 0;
-  }
-}
 .header .menu_padding_none {
   top: 75px;
 }
@@ -209,6 +173,23 @@ html, body {
   .header .menu_padding_none {
     top: 255px;
   }
+}
+.header_padding_none {
+  margin-top: 0;
+}
+@media screen and (max-width: 353px) {
+  .header_padding_none {
+    margin-top: 0;
+  }
+}
+.header__container {
+  height: 100%;
+}
+.header__body {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 100%;
 }
 .header__logo {
   flex-basis: 22.0689655172%;
@@ -279,7 +260,7 @@ html, body {
 }
 .header__button-menu {
   position: relative;
-  z-index: 20px;
+  z-index: 20;
   display: none;
   font-size: 20px;
   padding-top: 4px;
@@ -656,8 +637,10 @@ html, body {
 .card__name {
   font-size: 15px;
   line-height: 18px;
-  color: #1a1a1a;
   display: inline;
+}
+.card__name a {
+  color: #1a1a1a;
 }
 .card__advantage {
   font-size: 15px;
@@ -727,7 +710,7 @@ html, body {
 .good-price__information_gather {
   align-items: flex-start;
 }
-@media screen and (max-width: 579px) and (max-width: 579px) {
+@media screen and (max-width: 579px) {
   .good-price__information_gather {
     align-items: center;
   }
@@ -1028,7 +1011,7 @@ html, body {
 }
 @media screen and (max-width: 768px) {
   .footer__copyright {
-    flex: 1 1 100%;
+    flex-basis: 100%;
   }
 }
 .footer__text {
